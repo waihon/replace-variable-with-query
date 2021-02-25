@@ -8,7 +8,6 @@ class Tipper
   end
 
   def total
-    tax_amount = amount * TAX
     discount_amount = amount * (discount_percentage / 100.0)
     tip_amount = amount * (tip_percentage / 100.0)
 
@@ -18,4 +17,8 @@ class Tipper
   private
 
   attr_reader :amount, :discount_percentage, :tip_percentage
+
+  def tax_amount
+    amount * TAX
+  end
 end
