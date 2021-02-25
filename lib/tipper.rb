@@ -8,7 +8,6 @@ class Tipper
   end
 
   def total
-    discount_amount = amount * (discount_percentage / 100.0)
     tip_amount = amount * (tip_percentage / 100.0)
 
     amount + tax_amount - discount_amount + tip_amount
@@ -20,5 +19,9 @@ class Tipper
 
   def tax_amount
     amount * TAX
+  end
+
+  def discount_amount
+    amount * (discount_percentage / 100.0)
   end
 end
